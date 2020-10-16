@@ -1,0 +1,24 @@
+{
+   "type": "mysql",
+   "host": "",
+   "port": 0,
+   "username": "",
+   "password": "",
+   "database": "",
+   "synchronize": true,
+   "logging": false,
+   "entities": [
+      "build/infrastructure/repositories/entities/*.js"
+   ],
+   "migrations": [
+      "database/migration/**/*.ts"
+   ],
+   "subscribers": [
+      "src/subscriber/**/*.ts"
+   ],
+   "cli": {
+      "entitiesDir": "src/infrastructure/repositories/entities",
+      "migrationsDir": "database/migration",
+      "subscribersDir": "src/subscriber"
+   }
+}
