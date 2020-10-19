@@ -5,7 +5,7 @@ import { Address } from './address'
 @Entity()
 export class User {
     @PrimaryGeneratedColumn()
-    id: number
+    id?: number
 
     @Column()
     @IsString()
@@ -32,16 +32,16 @@ export class User {
     password: string
     
     @Column({ default: 'user' })
-    type: string
+    type?: string
     
     @CreateDateColumn()
-    createdAt: Date
+    createdAt?: Date
 
     @UpdateDateColumn()
-    updatedAt: Date
+    updatedAt?: Date
 
     @OneToMany( type => Address, address => address.user, {
         cascade: true
     } )
-    addresses: Address[]
+    addresses?: Address[]
 }
