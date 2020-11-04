@@ -12,7 +12,7 @@ export interface CreateUserRequest {
 
 export function CreateUserRequestMapper(createUserRequest: CreateUserRequest): User {
     const user: User = {
-        firstName: createUserRequest.username,
+        firstName: createUserRequest.firstName,
         lastName: createUserRequest.lastName,
         username: createUserRequest.username,
         email: createUserRequest.email,
