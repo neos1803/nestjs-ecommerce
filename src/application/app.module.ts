@@ -1,26 +1,20 @@
 import { Module } from '@nestjs/common';
-import { TypeOrmModule } from '@nestjs/typeorm';
-// import { AppController } from '../infrastructure/rest/controllers/app.controller';
-// import { AppService } from '../infrastructure/rest/services/app.service';
-// import { UserModule } from '../infrastructure/user.module';
-// import { AddressModule } from '../infrastructure/address.module';
-// import { AdminModule } from '../infrastructure/admin.module';
-// import { DiscountModule } from '../infrastructure/discount.module';
-// import { ProductModule } from '../infrastructure/product.module';
-import { MulterModule } from '@nestjs/platform-express';
-import { ConfigModule } from '@nestjs/config';
+// import { EmailModule }  from 'src/infrastructure/config/email.config'
+import { DatabaseModule } from 'src/infrastructure/config/database.config';
+import { CreateUserModule } from './use_cases/user/create/user.create.module';
+import { DeleteUserModule } from './use_cases/user/delete/user.delete.module';
+import { FindUserModule } from './use_cases/user/find/user.find.module';
+import { ShowUserModule } from './use_cases/user/show/user.show.module';
+import { UpdateUserModule } from './use_cases/user/update/user.update.module'
 
 @Module({
   imports: [
-    TypeOrmModule.forRoot(),
-    ConfigModule.forRoot(),
-    // UserModule,
-    // AddressModule,
-    // AdminModule,
-    // DiscountModule,
-    // ProductModule,
+    DatabaseModule,
+    CreateUserModule,
+    FindUserModule,
+    UpdateUserModule,
+    DeleteUserModule,
+    ShowUserModule
   ],
-  // controllers: [AppController],
-  // providers: [AppService],
 })
 export class AppModule {}
